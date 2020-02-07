@@ -1,0 +1,11 @@
+<mat-list cols="3" class="full">
+      <mat-card *ngFor="let book of this.items; let index = index" class="card"> 
+        <mat-card-title>
+            {{book.titre}}
+        </mat-card-title>
+        <mat-card-content class="around">
+            <span>Auteur : {{book.auteur}}</span><span>Pages : {{book.nbPages}}</span>
+        </mat-card-content>
+        <i class="material-icons absolute" (click)="delete(book.id)">close</i>
+      </mat-card>
+</mat-list>

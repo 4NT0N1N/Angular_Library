@@ -1,0 +1,18 @@
+<form #idForm="ngForm" class="container">
+    <mat-form-field>
+      <input id="id" ngModel name="id" #num="ngModel" matInput placeholder="Id" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" id="titre" ngModel name="titre" #titre="ngModel" matInput placeholder="Titre" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input id="auteur" ngModel name="auteur" #num="ngModel" matInput placeholder="auteur">
+  </mat-form-field>
+  <mat-form-field>
+    <input id="pages" ngModel name="pages" #pages="ngModel" matInput placeholder="Pages" required>
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="!idForm.valid"
+    (click)="add(idForm.value.id, idForm.value.titre, idForm.value.auteur, idForm.value.pages); idForm.reset();">
+    Add
+  </button>
+</form>
